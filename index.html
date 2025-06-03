@@ -11,23 +11,44 @@
             1. Create funcion "getComputerChoice".
             2. getComputerChoice should randomly return rock, paper or scissors. (Math.random)
             3. Test to see if it returns properly.
+
+
         */
-         function max(num) {
-            result = parseInt(Math.random() * num);
-            
-            if (result == 3) {
-                return console.log("Rock");
-                
+        let humanScore;
+        let computerScore;
+
+        function getComputerChoice() {
+            result = Math.floor(Math.random() * 3);
+            if (result == 2) {
+                return "Rock";
             } else {
-                return console.log(result);
-                
+                if (result == 1) {
+                    return "Paper";
+                    } else {
+                        return "Scissors";
+                    }    
             }
-         }
+        }
          
-         console.log(max(3));
+        console.log(getComputerChoice());
          
          
+       // getComputerChoice(3) == 0 ? computerChoice = "Rock" : 
+           //  getComputerChoice(3) == 1 ? computerChoice = "Paper" : computerChoice = "Scissors";
+            
+         
+        
+        function getHumanChoice() {
+            result = prompt("Qual opção deseja?", "Pedra, papel ou tesoura.");
+            
+        }
+        getHumanChoice()
+         
+        function playRound(humanChoice, computerChoice) {
+            
+        }
        
+        
     </script>
 </body>
 </html>
