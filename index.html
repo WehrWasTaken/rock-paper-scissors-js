@@ -7,13 +7,7 @@
 </head>
 <body>
     <script>
-        /*
-            1. Create funcion "getComputerChoice".
-            2. getComputerChoice should randomly return rock, paper or scissors. (Math.random)
-            3. Test to see if it returns properly.
 
-
-        */
         let humanScore = 0;
         let computerScore = 0;
         
@@ -35,15 +29,13 @@
         
         }
         
-        
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        
-        function playRound(humanSelection, computerSelection) {
+         
+        function playGame() {
+           
+            function playRound(humanSelection, computerSelection) {
             computerSelection = computerSelection.toLowerCase();
-            computerSelection = computerSelection.toLowerCase();
-            console.log(computerSelection);
-            
+            humanSelection = humanSelection.toLowerCase();
+    
             if (humanSelection === computerSelection) {
                 return "Draw!";
             } else {
@@ -78,10 +70,26 @@
                 }
             }
         }
-
-      
-       
-        console.log(playRound(humanSelection, computerSelection));
+            
+            for (let index = 0; index < 5; index++) {
+                const humanSelection = getHumanChoice();
+                const computerSelection = getComputerChoice();
+                    console.log(playRound(humanSelection, computerSelection));
+                    console.log(computerScore);
+                    console.log(humanScore);   
+                    }
+            
+            if (humanScore > computerScore) {
+                console.log("Você venceu!");
+                
+            } else {
+                console.log("Você perdeu, tente novamente!");
+                               
+            }
+            
+    }  
+        
+        playGame();
         
         
     </script>
