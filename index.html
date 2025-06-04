@@ -39,23 +39,23 @@
             if (humanSelection === computerSelection) {
                 return "Draw!";
             } else {
-                if (humanSelection == "Paper" && computerSelection == "Rock") {
+                if (humanSelection == "paper" && computerSelection == "rock") {
                     humanScore = humanScore + 1;
                     return "Human Wins!";
                 } else {
-                    if (humanSelection == "Paper" && computerSelection == "Scissors") {
+                    if (humanSelection == "paper" && computerSelection == "scissors") {
                         computerScore = computerScore + 1
                         return "Computer Wins!"
                     } else {
-                        if (humanSelection == "Rock" && computerSelection == "Scissors") {
+                        if (humanSelection == "rock" && computerSelection == "scissors") {
                             humanScore = humanScore + 1;
                             return "Human Wins!"    
                         } else { 
-                            if (humanSelection == "Rock" && computerSelection == "Paper") {
+                            if (humanSelection == "rock" && computerSelection == "paper") {
                                 computerScore = computerScore + 1;
                                 return "Computer Wins!"
                             } else {
-                                if (humanSelection == "Scissors" && computerSelection == "Paper") {
+                                if (humanSelection == "scissors" && computerSelection == "paper") {
                                     humanScore = humanScore + 1;
                                     return "Human Wins!"
                                 } else {
@@ -72,8 +72,12 @@
         }
             
             for (let index = 0; index < 5; index++) {
-                const humanSelection = getHumanChoice();
-                const computerSelection = getComputerChoice();
+                let humanSelection = getHumanChoice();
+                let computerSelection = getComputerChoice();
+                computerSelection = computerSelection.toLowerCase();
+                humanSelection = humanSelection.toLowerCase();
+                    console.log("Você escolheu: " + humanSelection);
+                    console.log("O computador escolheu: " + computerSelection);   
                     console.log(playRound(humanSelection, computerSelection));
                     console.log(computerScore);
                     console.log(humanScore);   
@@ -82,9 +86,14 @@
             if (humanScore > computerScore) {
                 console.log("Você venceu!");
                 
-            } else {
-                console.log("Você perdeu, tente novamente!");
-                               
+            } else { 
+                
+                if (humanScore == computerScore) {
+                     console.log("Empate!");
+                
+                } else {
+                     console.log("Você perdeu, tente novamente!");
+            }                   
             }
             
     }  
